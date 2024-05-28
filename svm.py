@@ -21,6 +21,7 @@ def plot(X,
          ylim=None,
          ny=300,
          ax=None,
+         figsize=(8,8),
          decision_cmap=plt.cm.plasma,
          scatter_cmap=plt.cm.tab10,
          alpha=0.2):
@@ -82,7 +83,7 @@ def plot(X,
                 X1.max() + 0.5 * X1.std())
 
     if ax is None:
-        fig, ax = plt.subplots()
+        fig, ax = plt.subplots(figsize=figsize)
     else:
         fig = ax.figure
 
