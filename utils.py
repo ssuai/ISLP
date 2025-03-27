@@ -1,8 +1,11 @@
 from os.path import join as pjoin
 import pandas as pd, numpy as np
-from importlib.resources import (as_file,
-                                 files)
+import sys
 
+if sys.version_info >= (3, 9):
+    from importlib.resources import files, as_file
+else:
+    from importlib_resources import files, as_file
 
 # data originally saved via: [sm.datasets.get_rdataset(n, 'ISLR').data.to_csv('../ISLP/data/%s.csv' % n, index=False) for n in ['Carseats', 'College', 'Credit', 'Default', 'Hitters', 'Auto', 'OJ', 'Portfolio', 'Smarket', 'Wage', 'Weekly', 'Caravan']]
 
